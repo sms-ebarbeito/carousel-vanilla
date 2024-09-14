@@ -206,15 +206,19 @@ class CardCarousel extends DraggingEvent {
             card.setAttribute("data-x", data.x)
         }
 
-        if (data.scale || data.scale == 0) {
-            card.style.transform = `scale(${data.scale})`
-
-            if (data.scale == 0) {
-                card.style.opacity = data.scale
-            } else {
-                card.style.opacity = 1;
-            }
-        }
+        const calc = 1.5 // + parseInt(card.style.left ) / 100 * 0.5;
+        //console.log(calc);
+        //if (data.scale || data.scale == 0) {
+            card.style.transform = card.classList.contains("highlight") ? `scale(${calc})` : `scale(${data.scale})`
+            // if (card.classList.contains("highlight")) {
+            //     document.querySelector(".top-image").id = card.id;
+            // }
+        //    if (data.scale == 0) {
+        //        card.style.opacity = data.scale
+        //    } else {
+        //        card.style.opacity = 1;
+        //    }
+        //}
 
         if (data.leftPos) {
             card.style.left = `${data.leftPos}%`
@@ -223,6 +227,8 @@ class CardCarousel extends DraggingEvent {
         if (data.zIndex || data.zIndex == 0) {
             if (data.zIndex == 0) {
                 card.classList.add("highlight")
+                card.style.transform = `scale(1.5)`
+                document.querySelector(".top-image").id = card.id;
             } else {
                 card.classList.remove("highlight")
             }

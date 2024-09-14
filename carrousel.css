@@ -18,7 +18,7 @@
 .card-carousel {
     --card-width: 328px;
     --card-max-width: 768px;
-    --card-height: 350px;
+    --card-height: 200px;
     --carousel-min-width: 328x;
     z-index: 1;
     position: relative;
@@ -41,7 +41,6 @@
 }
 
 .card-carousel .card {
-    border: black solid 1px;
     width: var(--card-width);
     max-width: var(--card-max-width);
     text-align: center;
@@ -69,7 +68,6 @@
 }
 
 .card.highlight {
-    border: red solid 1px;
     filter: brightness(1)
 }
 
@@ -104,4 +102,26 @@
     -moz-box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.3);
     box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.3);
 
+}
+
+.top-image:nth-of-type(1) {
+    background-image: url("https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+}
+.top-image:nth-of-type(2){
+    background-image: url("https://www.w3schools.com/w3css/img_lights.jpg")
+}
+.top-image:nth-of-type(3) {
+    background-image: url("https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+}
+.top-image:nth-of-type(4) {
+    background-image: url("https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+}
+.top-image:nth-of-type(5) {
+    background-image: url("https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg")
+}
+
+.top-image {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
 }
