@@ -204,14 +204,14 @@ class CardCarousel extends DraggingEvent {
     }
 
     updateCards(card, data) {
+        const sizeHighlighted = 1.5; //Esto es el tamaño del icono central
         if (data.x || data.x == 0) {
             card.setAttribute("data-x", data.x)
         }
-
-        const calc = 1.5 // + parseInt(card.style.left ) / 100 * 0.5;
+        //Aca se actualiza el tamaño del icono central el que va HIGHLIGHTED
         //console.log(calc);
         //if (data.scale || data.scale == 0) {
-            card.style.transform = card.classList.contains("highlight") ? `scale(${calc})` : `scale(${data.scale})`
+        card.style.transform = card.classList.contains("highlight") ? `scale(${sizeHighlighted})` : `scale(${data.scale})`
             // if (card.classList.contains("highlight")) {
             //     document.querySelector(".top-image").id = card.id;
             // }
@@ -226,12 +226,12 @@ class CardCarousel extends DraggingEvent {
             card.style.left = `${data.leftPos}%`
         }
 
-        if (data.zIndex || data.zIndex == 0) {
-            if (data.zIndex == 0) {
+        if (data.zIndex || data.zIndex === 0) {
+            if (data.zIndex === 0) {
                 card.classList.add("highlight")
-                card.style.transform = `scale(1.5)`
+                card.style.transform = `scale(${sizeHighlighted})`
                 this.changeTopImage(card.id);
-                //document.querySelector(".top-image").id = card.id;
+                this.changeText(card.id);
             } else {
                 card.classList.remove("highlight")
             }
@@ -262,6 +262,18 @@ class CardCarousel extends DraggingEvent {
         }
     }
 
+    changeText(id) {
+        if (!id) return;
+        const textItems = document.querySelectorAll(".text-item");
+        textItems.forEach(textItem => {
+            if (textItem.classList.contains("text-" + id)) {
+                textItem.classList.remove("hidden-text");
+            } else {
+                textItem.classList.add("hidden-text");
+            }
+        })
+    }
+
     calcScale2(x) {
         let formula;
 
@@ -276,6 +288,7 @@ class CardCarousel extends DraggingEvent {
         }
     }
 
+    //Esto no se usa más devolvemos para todas 1 para que tengan el mismo tamaño
     calcScale(x) {
         const formula = 1 // - 1 / 5 * Math.pow(x, 2)
 
