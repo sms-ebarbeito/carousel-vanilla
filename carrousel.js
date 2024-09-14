@@ -91,6 +91,8 @@ class CardCarousel extends DraggingEvent {
     constructor(container, controller = undefined) {
         super(container)
 
+        this.highlightedId = 1;
+
         // DOM elements
         this.container = container
         this.controllerElement = controller
@@ -228,12 +230,35 @@ class CardCarousel extends DraggingEvent {
             if (data.zIndex == 0) {
                 card.classList.add("highlight")
                 card.style.transform = `scale(1.5)`
-                document.querySelector(".top-image").id = card.id;
+                this.changeTopImage(card.id);
+                //document.querySelector(".top-image").id = card.id;
             } else {
                 card.classList.remove("highlight")
             }
 
             card.style.zIndex = data.zIndex
+        }
+    }
+
+    changeTopImage(id) {
+        if (!id) return;
+        const clazzList = document.querySelector(".top-image").classList;
+        // if (!clazzList.contains("bg-image-" + id)) {
+        //     clazzList.remove("bg-image-1");
+        //     clazzList.remove("bg-image-2");
+        //     clazzList.remove("bg-image-3");
+        //     clazzList.remove("bg-image-4");
+        //     clazzList.remove("bg-image-5");
+        //     clazzList.add("bg-image-" + id);
+        // } //lo de abajo hace lo mismo pero mas lindo usando una regex...
+        if (!clazzList.contains("bg-image-" + id)) {
+            clazzList.forEach(cls => {
+                if (/^bg-image-\d+$/.test(cls)) {
+                    clazzList.remove(cls);
+                }
+            });
+            clazzList.add("bg-image-" + id);
+            this.highlightedId = parseInt(id);
         }
     }
 

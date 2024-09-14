@@ -104,19 +104,21 @@
 
 }
 
-.top-image:nth-of-type(1) {
-    background-image: url("https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+.bg-image-1 {
+    background-image: url("https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
 }
-.top-image:nth-of-type(2){
-    background-image: url("https://www.w3schools.com/w3css/img_lights.jpg")
+
+.bg-image-2 {
+    background-image: url("https://www.w3schools.com/w3css/img_lights.jpg");
 }
-.top-image:nth-of-type(3) {
-    background-image: url("https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+
+.bg-image-3 {
+    background-image: url("https://static.addtoany.com/images/dracaena-cinnabari.jpg");
 }
-.top-image:nth-of-type(4) {
+.bg-image-4 {
     background-image: url("https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
 }
-.top-image:nth-of-type(5) {
+.bg-image-5 {
     background-image: url("https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg")
 }
 
