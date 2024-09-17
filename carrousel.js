@@ -204,7 +204,7 @@ class CardCarousel extends DraggingEvent {
     }
 
     updateCards(card, data) {
-        const sizeHighlighted = 1.5; //Esto es el tamaño del icono central
+        const sizeHighlighted = 1; //Esto es el tamaño del icono central
         if (data.x || data.x == 0) {
             card.setAttribute("data-x", data.x)
         }

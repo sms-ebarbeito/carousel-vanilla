@@ -68,16 +68,31 @@
 }
 
 .card.highlight {
-    filter: brightness(1)
+    filter: brightness(1);
 }
 
 
 .card:nth-of-type(1) .image-container {
-    background-image: url("https://static.addtoany.com/images/dracaena-cinnabari.jpg");
+    background-color: red;
+    -webkit-mask-image: url("icon.svg");
+    mask-image: url("icon.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    transition: background-color 1s ease, transform 1s ease;;
+}
+
+.highlight  .image-container {
+    background-color: black !important;
+    transform: scale(2);
 }
 
 .card:nth-of-type(2) .image-container {
-    background-image: url("https://www.w3schools.com/w3css/img_lights.jpg")
+    background-color: red;
+    -webkit-mask-image: url("icon.svg");
+    mask-image: url("icon.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    transition: background-color 1s ease, transform 1s ease;;
 }
 
 .card:nth-of-type(3) .image-container {
@@ -94,7 +109,7 @@
     width: 40px;
     height: 40px;
     position: relative;
-    background-size: cover;
+    /*background-size: cover;*/
     margin-bottom: 40px;
     border-radius: 8px;
     padding: 10px;
